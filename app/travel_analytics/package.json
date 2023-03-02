@@ -21,18 +21,14 @@
     "sapui5"
   ],
   "devDependencies": {
-    "@ui5/cli": "^3.0.2",
+    "@sap-ux/ui5-middleware-fe-mockserver": "2.1.62",
+    "@sap/ux-ui5-tooling": "1.9.0",
+    "@ui5/cli": "3.0.3",
     "karma": "^6.4.1",
     "karma-chrome-launcher": "^3.1.1",
     "karma-ui5": "^3.0.2",
     "puppeteer": "^19.7.1",
     "ui5-middleware-simpleproxy": "^0.9.3",
     "ui5-task-zipper": "^0.7.3"
-  },
-  "ui5": {
-    "dependencies": [
-      "ui5-task-zipper",
-      "ui5-middleware-simpleproxy"
-    ]
   }
 }
