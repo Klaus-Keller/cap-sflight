@@ -15,6 +15,10 @@
     "test:mocha": "npx mocha --timeout 20000",
     "travel-analytics": "cds watch --open travel_analytics/webapp/index.html?sap-ui-xx-viewCache=false"
   },
+  "workspaces": [
+    "./app/travel_analytics",
+    "./app/travel_processor"
+  ],
   "dependencies": {
     "@sap/cds": ">=5.4.5",
     "@sap/xssec": "^3.2.7",
