@@ -11,7 +11,8 @@
   "scripts": {
     "lint": "npx eslint .",
     "test": "jest",
-    "test:mocha": "npx mocha --timeout 20000"
+    "test:mocha": "npx mocha --timeout 20000",
+    "watch-travel": "cds watch --open travel/webapp/index.html?sap-ui-xx-viewCache=false"
   },
   "dependencies": {
     "@sap/cds": ">=7.0.0",
@@ -21,7 +22,7 @@
   },
   "devDependencies": {
     "@cap-js/sqlite": "^1.0.1",
-    "@sap/ux-specification": "UI5-1.121",
+    "@sap/ux-specification": "^1.120.5",
     "axios": "^1",
     "chai": "^4.3.0",
     "chai-as-promised": "^7.1.1",
@@ -113,6 +114,7 @@
   },
   "sapux": [
     "app/travel_processor",
-    "app/travel_analytics"
+    "app/travel_analytics",
+    "app/travel"
   ]
 }

@@ -1,0 +1,6 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:macros="sap.fe.macros"
+    xmlns:html="http://www.w3.org/1999/xhtml" controllerName="travel.ext.view.Custom">
+    <Page id="Custom" title="{i18n>CustomTitle}">
+        <content><html:iframe width="560" height="315" src="https://www.youtube.com/embed/FabiIE-IaSE?si=0jKSMd0fK6JUMoHQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></html:iframe></content>
+    </Page>
+</mvc:View>
