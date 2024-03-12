@@ -1,11 +1,10 @@
 # Demo flow
 
-TODO: Clean up existing apps?
-
 ## Application Generation
 
-- Create new Fiori app LROP from local CAP project
-- `Travel Service (node.js)`
+- Command `Fiori: Open Application Generator`
+- Create new List Report Page from local CAP project
+- OData Service: `TravelService (Node.js)`
 - Main entity: `Travel`
 - Navigation entity: `None`
 
@@ -19,7 +18,7 @@ TODO: Clean up existing apps?
 
 ## Add Filterfield
 
-- Start Guided Development
+- Start Guided Development guide: `Add and edit filter fields`
 - `app/travel/annotations.cds`
 - `TravelService`
 - `Travel`
@@ -35,21 +34,31 @@ TODO: Clean up existing apps?
 
 ## Add Custom Section and Table Macro
 
-- add custom section
-- remove button from code
+- Open page editor for TravelObjectPage
+- Click `+` on sections and `Add Custom Section`
+- Name `BookingsAndNotes`
+- New Fragment Name: `BookingsAndNotesFragment`
+- Anchor Section: `General Information (ID: Travel)`
+- Placement: `After`
+- Click `Add`
+- Open Code and remove button
 
-- add table macro
-- skip first step
-- View or Fragment File: `webapp/ext/fragment/CustomFragment`
+- Expand `BookingsAndNotesFragment` and click `+` att Building Block
+- Add Table
+- Click `Start Guide` and skip first step
+- View or Fragment File: `webapp/ext/fragment/BookingsAndNotesFragment`
 - Building Block ID: `Table`
+- Binding Context Path: `Relative`
 - Service: `TravelService`
 - Entity: `Travel`
 - Navigation Path: `to_Booking`
+- Line Item Qualifier: `to_Booking/UI.LineItem`
 - Aggregation Path: `/core:FragmentDefinition/VBox`
+- Click `Insert Snippet`
 
 ## Add RichTextEdit
 
-Insert in `app/travel/webapp/ext/fragment/CustomFragment.fragment.xml`
+- in File `app/travel/webapp/ext/fragment/BookingsAndNotesFragment.fragment.xml` add RichTextEdit. The final content of the file:
 
 ```xml
 <core:FragmentDefinition xmlns:layout="sap.ui.layout" xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:macros="sap.fe.macros">
@@ -77,6 +86,8 @@ Insert in `app/travel/webapp/ext/fragment/CustomFragment.fragment.xml`
 
 ## Add Custom Page
 
-(app modeler)
-
+- Start Page Map and click `+` on TravelObjectPage
+- Select Page Type: `CustomPage`
+- Navigation: `to_Booking (Booking)`
+- View Name: `Custom`
 - content?
