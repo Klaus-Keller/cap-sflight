@@ -99,4 +99,15 @@ code .
 - Select Page Type: `CustomPage`
 - Navigation: `to_Booking (Booking)`
 - View Name: `Custom`
-- content?
+- content:
+
+```html
+<html:iframe
+  width="560"
+  height="315"
+  src="https://www.youtube.com/embed/FabiIE-IaSE?si=0jKSMd0fK6JUMoHQ"
+  title="YouTube video player"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+></html:iframe>
+```
