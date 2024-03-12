@@ -1,5 +1,14 @@
 # Demo flow
 
+## Preparation
+
+```
+git clone -b sap-insider-start https://github.com/Klaus-Keller/cap-sflight.git
+cd cap-sflight
+npm i
+code .
+```
+
 ## Application Generation
 
 - Command `Fiori: Open Application Generator`
