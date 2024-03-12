@@ -34,8 +34,7 @@ annotate TravelService.Travel with @UI : {
   },
   SelectionFields : [
     to_Agency_AgencyID,
-    to_Customer_CustomerID,
-    TravelStatus_code
+    to_Customer_CustomerID
   ],
   LineItem : [
     { $Type  : 'UI.DataFieldForAction', Action : 'TravelService.acceptTravel',   Label  : '{i18n>AcceptTravel}'   },
@@ -90,11 +89,6 @@ annotate TravelService.Travel with @UI : {
         Label  : '{i18n>Dates}'
       }
       ]
-  }, {  // booking list
-    $Type  : 'UI.ReferenceFacet',
-    ID     : 'BookingList',
-    Target : 'to_Booking/@UI.PresentationVariant',
-    Label  : '{i18n>Bookings}'
   }],
   FieldGroup#TravelData : { Data : [
     { Value : TravelID               },
