@@ -28,9 +28,10 @@ code .
 ## Add Filterfield
 
 - Start Guided Development guide: `Add and edit filter fields`
-- `app/travel/annotations.cds`
+- `app/services.cds`
 - `TravelService`
 - `Travel`
+- Click `+ Add selection field`
 - Property: `TravelStatus_code`
 - Insert snippet
 
@@ -89,6 +90,26 @@ code .
             </layout:SplitPane>
         </layout:PaneContainer>
     </layout:ResponsiveSplitter>
+</core:FragmentDefinition>
+```
+
+Alternative, to show the rich text below the table:
+
+```xml
+<core:FragmentDefinition xmlns:layout="sap.ui.layout" xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:macros="sap.fe.macros">
+    <VBox>
+        <macros:Table id="Table" metaPath="to_Booking/@com.sap.vocabularies.UI.v1.LineItem" headerVisible="true" isSearchable="true" selectionMode="Single" type="ResponsiveTable" variantManagement="None"/>
+        <macros:RichTextEditorWithMetadata metaPath="AdditionalNotes" id="myRichTextEditor">
+            <macros:buttonGroups>
+                <macros:buttonGroup name="font-style" visible="true" priority="10" customPriority="10" buttons="bold,italic,underline" />
+                <macros:buttonGroup name="font" visible="true" priority="10" customPriority="10" buttons="fontfamily,fontsize,forecolor,backcolor" />
+                <macros:buttonGroup name="structure" visible="true" priority="10" customPriority="10" buttons="bullist, numlist, outdent, indent" />
+                <macros:buttonGroup name="undo" visible="true" priority="10" customPriority="10" buttons="undo,redo" />
+                <macros:buttonGroup name="link" visible="true" priority="10" customPriority="10" buttons="link, unlink" />
+                <macros:buttonGroup name="text-align" visible="true" priority="10" customPriority="10" buttons="alignleft, aligncenter, alignright, alignjustify" />
+            </macros:buttonGroups>
+        </macros:RichTextEditorWithMetadata>
+    </VBox>
 </core:FragmentDefinition>
 ```
 

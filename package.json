@@ -41,12 +41,12 @@
           "kind": "hana-cloud"
         },
         "auth": {
-          "kind": "xsuaa"
+          "kind": "dummy"
         }
       },
       "[development]": {
         "auth": {
-          "kind": "mocked-auth",
+          "kind": "dummy",
           "users": {
             "rose": {
               "roles": []
