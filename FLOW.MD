@@ -52,11 +52,11 @@ code .
 - Click `Add`
 - Open Code and remove `<Button>..</Button>`
 
-## Add Table Macro and FilterBar
+## Add Table Macro
 
 - Expand `BookingsAndNotesFragment` and click `+` at Building Block
 - Add Table
-- Click `Start Guide` and skip first step
+- Click `Start Guide` and skip to `2. Add table building block`
 - View or Fragment File: `webapp/ext/fragment/BookingsAndNotesFragment`
 - Building Block ID: `Table`
 - Binding Context Path: `Relative`
@@ -65,75 +65,63 @@ code .
 - Navigation Path: `to_Booking`
 - Line Item Qualifier: `to_Booking/UI.LineItem`
 - Aggregation Path: `/core:FragmentDefinition/VBox`
+- Associated Filter Bar ID: `FilterBar`
 - Click `Insert Snippet`
 
-- Click again `+` at Building Block
-- Add Filterbar
-- Start Guide
+## Add Filter Bar Macro
+
+- Click `+` at Building Block again
+- Click `Start Guide`
 - CDS File: `app/services.cds`
 - Service: `TravelService`
 - Entity: `Booking`
-- Click `+ Add selection field`
+- `+ Add Selection Field`
 - Property: `BookingID`
-- Property: `BookingStatus_code`
 - Click `Insert Snippet`
-- Click `Insert Snippet`
-
-- Click `Next` to 'Add Filter bar building block'
+- Click `Next Step`
 - View or Fragment File: `webapp/ext/fragment/BookingsAndNotesFragment`
 - Building Block ID: `FilterBar`
 - Service: `TravelService`
 - Entity: `Booking`
-- Selection Fields Qualifier: `UI.SelectionFields` -> need to be change to `to_Booking/@com.sap.vocabularies.UI.v1.SelectionFields`
+- Selection Field Qualifier: `UI.SelectionFields` --> needs manually change to `to_Booking/@com.sap.vocabularies.UI.v1.SelectionFields`
 - Aggregation Path: `/core:FragmentDefinition/VBox`
+- Click `Insert Snippet`
+- Move line `<macros:FilterBar ..` above `<macros:Table ..`
 
 ## Add RichTextEdit
 
-- in File `app/travel/webapp/ext/fragment/BookingsAndNotesFragment.fragment.xml` add RichTextEdit. The final content of the file:
-
-```xml
-<core:FragmentDefinition xmlns:layout="sap.ui.layout" xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:macros="sap.fe.macros">
-    <layout:ResponsiveSplitter>
-        <layout:PaneContainer >
-            <layout:SplitPane >
-                    <macros:Table id="Table" metaPath="to_Booking/@com.sap.vocabularies.UI.v1.LineItem" headerVisible="true" isSearchable="true" selectionMode="Single" type="ResponsiveTable" variantManagement="None"/>
-            </layout:SplitPane>
-            <layout:SplitPane>
-                <macros:RichTextEditorWithMetadata metaPath="AdditionalNotes" id="myRichTextEditor">
-                        <macros:buttonGroups>
-                            <macros:buttonGroup name="font-style" visible="true" priority="10" customPriority="10" buttons="bold,italic,underline" />
-                            <macros:buttonGroup name="font" visible="true" priority="10" customPriority="10" buttons="fontfamily,fontsize,forecolor,backcolor" />
-                            <macros:buttonGroup name="structure" visible="true" priority="10" customPriority="10" buttons="bullist, numlist, outdent, indent" />
-                            <macros:buttonGroup name="undo" visible="true" priority="10" customPriority="10" buttons="undo,redo" />
-                            <macros:buttonGroup name="link" visible="true" priority="10" customPriority="10" buttons="link, unlink" />
-                            <macros:buttonGroup name="text-align" visible="true" priority="10" customPriority="10" buttons="alignleft, aligncenter, alignright, alignjustify" />
-                        </macros:buttonGroups>
-                    </macros:RichTextEditorWithMetadata>
-            </layout:SplitPane>
-        </layout:PaneContainer>
-    </layout:ResponsiveSplitter>
-</core:FragmentDefinition>
-```
-
-Alternative, to show the rich text below the table:
-
-```xml
-<core:FragmentDefinition xmlns:layout="sap.ui.layout" xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:macros="sap.fe.macros">
-    <VBox>
-        <macros:Table id="Table" metaPath="to_Booking/@com.sap.vocabularies.UI.v1.LineItem" headerVisible="true" isSearchable="true" selectionMode="Single" type="ResponsiveTable" variantManagement="None"/>
-        <macros:RichTextEditorWithMetadata metaPath="AdditionalNotes" id="myRichTextEditor">
-            <macros:buttonGroups>
-                <macros:buttonGroup name="font-style" visible="true" priority="10" customPriority="10" buttons="bold,italic,underline" />
-                <macros:buttonGroup name="font" visible="true" priority="10" customPriority="10" buttons="fontfamily,fontsize,forecolor,backcolor" />
-                <macros:buttonGroup name="structure" visible="true" priority="10" customPriority="10" buttons="bullist, numlist, outdent, indent" />
-                <macros:buttonGroup name="undo" visible="true" priority="10" customPriority="10" buttons="undo,redo" />
-                <macros:buttonGroup name="link" visible="true" priority="10" customPriority="10" buttons="link, unlink" />
-                <macros:buttonGroup name="text-align" visible="true" priority="10" customPriority="10" buttons="alignleft, aligncenter, alignright, alignjustify" />
-            </macros:buttonGroups>
-        </macros:RichTextEditorWithMetadata>
-    </VBox>
-</core:FragmentDefinition>
-```
+- Open https://sapui5.hana.ondemand.com/test-resources/sap/fe/core/fpmExplorer/index.html#/buildingBlocks/rte/rteSection
+- On the right, click on `More` -> `CustomSection.fragment.xml
+- Add following additional button groups:
+  ```xml
+  	<macros:buttonGroup name="font" visible="true" priority="10" customPriority="10" buttons="fontfamily,fontsize,forecolor,backcolor" />
+   <macros:buttonGroup name="structure" visible="true" priority="10" customPriority="10" buttons="bullist, numlist, outdent, indent" />
+   <macros:buttonGroup name="undo" visible="true" priority="10" customPriority="10" buttons="undo,redo" />
+   <macros:buttonGroup name="link" visible="true" priority="10" customPriority="10" buttons="link, unlink" />
+   <macros:buttonGroup name="text-align" visible="true" priority="10" customPriority="10" buttons="alignleft, aligncenter, alignright, alignjustify" />
+  ```
+- Preview does not work for me in FPM !?
+- Copy the whole `<macros:RichTextEditorWithMetadata` and insert it into `app/travel/webapp/ext/fragment/BookingsAndNotesFragment.fragment.xml` below `<macros:Table ..`
+- Change `metaPath="DescriptionProperty"` to `metaPath="AdditionalNotes"`
+- The final content of the file `app/travel/webapp/ext/fragment/BookingsAndNotesFragment.fragment.xml`:
+  ```xml
+  <core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:macros="sap.fe.macros">
+      <VBox>
+          <macros:FilterBar id="FilterBar" metaPath="to_Booking/@com.sap.vocabularies.UI.v1.SelectionFields"/>
+          <macros:Table id="Table" metaPath="to_Booking/@com.sap.vocabularies.UI.v1.LineItem" filterBar="FilterBar" headerVisible="true" isSearchable="true" selectionMode="Single" type="ResponsiveTable" variantManagement="None"/>
+          <macros:RichTextEditorWithMetadata metaPath="AdditionalNotes" id="myRichTextEditor">
+              <macros:buttonGroups>
+                  <macros:buttonGroup name="font-style" visible="true" priority="10" customPriority="10" buttons="bold,italic,underline" />
+                  <macros:buttonGroup name="font" visible="true" priority="10" customPriority="10" buttons="fontfamily,fontsize,forecolor,backcolor" />
+                  <macros:buttonGroup name="structure" visible="true" priority="10" customPriority="10" buttons="bullist, numlist, outdent, indent" />
+                  <macros:buttonGroup name="undo" visible="true" priority="10" customPriority="10" buttons="undo,redo" />
+                  <macros:buttonGroup name="link" visible="true" priority="10" customPriority="10" buttons="link, unlink" />
+                  <macros:buttonGroup name="text-align" visible="true" priority="10" customPriority="10" buttons="alignleft, aligncenter, alignright, alignjustify" />
+              </macros:buttonGroups>
+          </macros:RichTextEditorWithMetadata>
+      </VBox>
+  </core:FragmentDefinition>
+  ```
 
 ## Add Custom Page
 
