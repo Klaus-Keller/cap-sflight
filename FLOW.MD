@@ -28,9 +28,9 @@ code .
 ## Add Filterfield
 
 - Start Guided Development guide: `Add and edit filter fields`
-- `app/services.cds`
-- `TravelService`
-- `Travel`
+- CDS File: `app/services.cds`
+- Service: `TravelService`
+- Entity: `Travel`
 - Click `+ Add selection field`
 - Property: `TravelStatus_code`
 - Insert snippet
@@ -50,7 +50,7 @@ code .
 - Anchor Section: `General Information (ID: Travel)`
 - Placement: `After`
 - Click `Add`
-- Open Code and remove button
+- Open Code and remove `<Button>..</Button>`
 
 - Expand `BookingsAndNotesFragment` and click `+` att Building Block
 - Add Table
