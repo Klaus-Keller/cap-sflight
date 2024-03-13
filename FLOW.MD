@@ -31,7 +31,6 @@ code .
 - `app/travel/annotations.cds`
 - `TravelService`
 - `Travel`
-- Add selection field
 - Property: `TravelStatus_code`
 - Insert snippet
 
