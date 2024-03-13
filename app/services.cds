@@ -7,8 +7,7 @@ using from './travel_analytics/annotations';
 
 annotate TravelService.Travel with @UI: {SelectionFields: [
     to_Agency_AgencyID,
-    to_Customer_CustomerID,
-    TravelStatus_code,
+    to_Customer_CustomerID
 ]};
 
 // Workarounds for overly strict OData libs and clients
