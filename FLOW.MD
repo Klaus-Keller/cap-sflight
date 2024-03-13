@@ -41,7 +41,7 @@ code .
 - Flexible Column Layout: `Flexible Column Layout`
 - `Mid-Expanded`
 
-## Add Custom Section and Table Macro
+## Add Custom Section
 
 - Open page editor for TravelObjectPage
 - Click `+` on sections and `Add Custom Section`
@@ -52,7 +52,9 @@ code .
 - Click `Add`
 - Open Code and remove `<Button>..</Button>`
 
-- Expand `BookingsAndNotesFragment` and click `+` att Building Block
+## Add Table Macro and FilterBar
+
+- Expand `BookingsAndNotesFragment` and click `+` at Building Block
 - Add Table
 - Click `Start Guide` and skip first step
 - View or Fragment File: `webapp/ext/fragment/BookingsAndNotesFragment`
@@ -64,6 +66,26 @@ code .
 - Line Item Qualifier: `to_Booking/UI.LineItem`
 - Aggregation Path: `/core:FragmentDefinition/VBox`
 - Click `Insert Snippet`
+
+- Click again `+` at Building Block
+- Add Filterbar
+- Start Guide
+- CDS File: `app/services.cds`
+- Service: `TravelService`
+- Entity: `Booking`
+- Click `+ Add selection field`
+- Property: `BookingID`
+- Property: `BookingStatus_code`
+- Click `Insert Snippet`
+- Click `Insert Snippet`
+
+- Click `Next` to 'Add Filter bar building block'
+- View or Fragment File: `webapp/ext/fragment/BookingsAndNotesFragment`
+- Building Block ID: `FilterBar`
+- Service: `TravelService`
+- Entity: `Booking`
+- Selection Fields Qualifier: `UI.SelectionFields` -> need to be change to `to_Booking/@com.sap.vocabularies.UI.v1.SelectionFields`
+- Aggregation Path: `/core:FragmentDefinition/VBox`
 
 ## Add RichTextEdit
 
