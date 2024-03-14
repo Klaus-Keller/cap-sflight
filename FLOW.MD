@@ -92,15 +92,17 @@ code .
 
 - Open https://sapui5.hana.ondemand.com/test-resources/sap/fe/core/fpmExplorer/index.html#/buildingBlocks/rte/rteSection
 - On the right, click on `More` -> `CustomSection.fragment.xml
+- Click a row in list report
+- The rich text edit is the last section `Custom Section`
+- Switch to edit mode
 - Add following additional button groups:
   ```xml
-  	<macros:buttonGroup name="font" visible="true" priority="10" customPriority="10" buttons="fontfamily,fontsize,forecolor,backcolor" />
+  <macros:buttonGroup name="font" visible="true" priority="10" customPriority="10" buttons="fontfamily,fontsize,forecolor,backcolor" />
    <macros:buttonGroup name="structure" visible="true" priority="10" customPriority="10" buttons="bullist, numlist, outdent, indent" />
    <macros:buttonGroup name="undo" visible="true" priority="10" customPriority="10" buttons="undo,redo" />
    <macros:buttonGroup name="link" visible="true" priority="10" customPriority="10" buttons="link, unlink" />
    <macros:buttonGroup name="text-align" visible="true" priority="10" customPriority="10" buttons="alignleft, aligncenter, alignright, alignjustify" />
   ```
-- Preview does not work for me in FPM !?
 - Copy the whole `<macros:RichTextEditorWithMetadata` and insert it into `app/travel/webapp/ext/fragment/BookingsAndNotesFragment.fragment.xml` below `<macros:Table ..`
 - Change `metaPath="DescriptionProperty"` to `metaPath="AdditionalNotes"`
 - The final content of the file `app/travel/webapp/ext/fragment/BookingsAndNotesFragment.fragment.xml`:
