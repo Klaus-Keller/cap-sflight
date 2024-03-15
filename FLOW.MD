@@ -82,8 +82,8 @@ code .
 - View or Fragment File: `webapp/ext/fragment/BookingsAndNotesFragment`
 - Building Block ID: `FilterBar`
 - Service: `TravelService`
-- Entity: `Booking`
-- Selection Field Qualifier: `UI.SelectionFields` --> needs manually change to `to_Booking/@com.sap.vocabularies.UI.v1.SelectionFields`
+- Entity: `Travel`
+- Selection Fields Qualifier: `to_Booking/UI.SelectionFields`
 - Aggregation Path: `/core:FragmentDefinition/VBox`
 - Click `Insert Snippet`
 - Move line `<macros:FilterBar ..` above `<macros:Table ..`
